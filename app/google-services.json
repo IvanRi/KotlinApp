@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "513949647699",
+    "project_id": "francs-app",
+    "storage_bucket": "francs-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513949647699:android:874afa81cc29f7281c97a6",
+        "android_client_info": {
+          "package_name": "com.example.francsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513949647699-s441ctg2k26jgpp9uqhfl2t1hldo9j3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzpImqp8Zei1QLWAiRo8SPjirxLN2CPh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513949647699-s441ctg2k26jgpp9uqhfl2t1hldo9j3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:513949647699:android:6ea4f9feb9a094e21c97a6",
+        "android_client_info": {
+          "package_name": "ivan.riboldi.tp3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "513949647699-s441ctg2k26jgpp9uqhfl2t1hldo9j3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzpImqp8Zei1QLWAiRo8SPjirxLN2CPh0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "513949647699-s441ctg2k26jgpp9uqhfl2t1hldo9j3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

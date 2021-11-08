@@ -3,9 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/activity_main.xml" value="0.38697916666666665" />
-        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_home.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/drawable/cart.xml" value="0.14835526315789474" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/drawable/fav.xml" value="0.14835526315789474" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.14835526315789474" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/drawable/person.xml" value="0.14835526315789474" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/activity_login.xml" value="0.13815789473684212" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/credit_card.xml" value="0.25" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_cart.xml" value="0.24201954397394138" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_favorites.xml" value="0.24201954397394138" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_history.xml" value="0.24201954397394138" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_login.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_pay.xml" value="0.22" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_product.xml" value="0.25" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/fragment_user_data.xml" value="0.25" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/order_item.xml" value="0.25" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/product.xml" value="0.25" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/layout/tag.xml" value="0.9" />
+        <entry key="..\:/Users/ivanr/AndroidStudioProjects/FrancsApp/app/src/main/res/menu/bottom_bar.xml" value="0.38697916666666665" />
       </map>
     </option>
   </component>
