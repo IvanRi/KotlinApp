@@ -10,13 +10,14 @@ import kotlinx.parcelize.Parcelize
 @Entity(tableName="items")
 class OrderItem(
     @ColumnInfo(name="name")
-    var name: String,
+    var name: String = "",
     @ColumnInfo(name="units")
-    var units: Int,
+    var units: Int = 0,
     @ColumnInfo(name="price")
-    var price: Double,
+    var price: Double = 0.0,
     @PrimaryKey
     @ColumnInfo(name="itemId")
-    var itemId: Int
+    var itemId: Int = 0
         ): Parcelable {
+    fun OrderItem(){}
 }

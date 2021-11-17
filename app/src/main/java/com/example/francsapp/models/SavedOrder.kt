@@ -2,8 +2,17 @@ package com.example.francsapp.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
+import java.text.SimpleDateFormat
 
 @Parcelize
-class SavedOrder(var userId: Int, var items: MutableList<OrderItem>, var payMethod: CreditCard, var orderCode: Long, var orderState: OrderState): Parcelable {
-
+data class SavedOrder(
+    var userId: Int = 0,
+    var items: MutableList<OrderItem>? = null,
+    var payMethod: CreditCard? = null,
+    var orderCode: Long = 0,
+    var orderState: OrderState? = null,
+    var date: String = "",
+    var total: Double = 0.0
+    ): Parcelable {
+        fun SavedOrder(){}
 }

@@ -1,11 +1,13 @@
 package com.example.francsapp.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -50,6 +52,11 @@ class HomeFragment : Fragment() {
         val layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
+        viewModelHome.selectedType.observe(viewLifecycleOwner, Observer {
+                var homeTitle: TextView = v.findViewById(R.id.homeTitle)
+                homeTitle.text = it.name
+        })
+
         viewModelHome.productList.observe(viewLifecycleOwner, Observer {
                 products ->
             run {
@@ -73,7 +80,7 @@ class HomeFragment : Fragment() {
         })
         recTypes.layoutManager = layoutManager
         recTypes.adapter = DrinkTypesAdapter(typesList){
-
+            viewModelHome.getProductByDrinkType(it)
         }
         recProducts.setHasFixedSize(true)
 
@@ -86,7 +93,7 @@ class HomeFragment : Fragment() {
 
     private fun redirectOnClick(pos: Int) {
         getActivity()?.supportFragmentManager?.beginTransaction()?.apply {
-            replace(R.id.fragmentContainerView2,ProductFragment(productList[pos]))
+            replace(R.id.fragmentContainerView2,ProductFragment(productList[pos], HomeFragment()))
             commit()
         }
     }

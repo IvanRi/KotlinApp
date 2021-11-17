@@ -1,5 +1,6 @@
 package com.example.francsapp.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +11,7 @@ import com.example.francsapp.models.DrinkType
 
 class DrinkTypesAdapter(
     var typesList: MutableList<DrinkType>,
-    var onClick: (Int)-> Unit
+    var onClick: (DrinkType)-> Unit
 ): RecyclerView.Adapter<DrinkTypesAdapter.TypesHolder>() {
 
     class TypesHolder(v: View): RecyclerView.ViewHolder(v){
@@ -19,6 +20,10 @@ class DrinkTypesAdapter(
         fun setTagName(typeName: String){
             var textView: TextView = view.findViewById(R.id.drinkName)
             textView.text = typeName
+        }
+
+        fun getTag(): TextView {
+            return view.findViewById(R.id.drinkName)
         }
     }
 
@@ -31,6 +36,9 @@ class DrinkTypesAdapter(
         var drinkType: DrinkType = typesList[position]
 
         holder.setTagName(drinkType.name)
+        holder.getTag().setOnClickListener(){
+            onClick(drinkType)
+        }
     }
 
     override fun getItemCount(): Int {

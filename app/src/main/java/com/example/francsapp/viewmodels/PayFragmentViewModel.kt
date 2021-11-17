@@ -10,6 +10,7 @@ import com.example.francsapp.database.itemDao
 import com.example.francsapp.models.CreditCard
 import com.example.francsapp.models.OrderState
 import com.example.francsapp.models.SavedOrder
+import com.example.francsapp.utils.DateUtils.Companion.obtenerFechaConFormato
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -68,8 +69,11 @@ class PayFragmentViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun payPurchase(){
+        var date = obtenerFechaConFormato("yyyy-MM-dd","America/Argentina/Buenos_Aires")
         var items = itemDao.getAllItem()
-        var order = SavedOrder(1, items, creditCardSelected.value!!,System.currentTimeMillis(),OrderState.IN_PREPARATION)
+        var order = SavedOrder(1, items, creditCardSelected.value!!,System.currentTimeMillis(),OrderState.IN_PREPARATION,
+            date.toString(), getTotalPrice()
+        )
         firebaseDB.collection("orders").add(order)
         roomDB.clearAllTables()
         Toast.makeText(getApplication(),"Su pedido fue creado con exito!", Toast.LENGTH_LONG).show()

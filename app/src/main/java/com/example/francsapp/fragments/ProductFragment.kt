@@ -15,12 +15,13 @@ import com.example.francsapp.R
 import com.example.francsapp.models.Product
 import com.example.francsapp.viewmodels.ProductFragmentViewModel
 
-class ProductFragment(product: Product) : Fragment() {
+class ProductFragment(product: Product, var from: Fragment) : Fragment() {
 
     private val viewModelProduct: ProductFragmentViewModel by viewModels()
     var product: Product = product
     lateinit var counterView: TextView
     lateinit var addProductToCart: Button
+    lateinit var favButton: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -59,6 +60,11 @@ class ProductFragment(product: Product) : Fragment() {
         }
         counterView = view.findViewById(R.id.productCountTV)
 
+        favButton = view.findViewById<ImageView>(R.id.favButton)
+        favButton.setOnClickListener(){
+            viewModelProduct.toggleProductFavorite(product.productId)
+        }
+
         addProductToCart = view.findViewById(R.id.addToCart)
         addProductToCart.setOnClickListener{
             viewModelProduct.addProductToCart()
@@ -74,6 +80,20 @@ class ProductFragment(product: Product) : Fragment() {
 
     override fun onStart() {
         super.onStart()
+        viewModelProduct.favoriteItemList.observe(viewLifecycleOwner, Observer {
+            // TODO revisar primer render
+            var isFavorite = false
+            it.forEach(){
+                if(it.productId == product.productId){
+                    isFavorite = true
+                }
+            }
+            if(isFavorite){
+                favButton.setColorFilter(resources.getColor(R.color.red))
+            } else {
+                favButton.setColorFilter(resources.getColor(R.color.grey_dark))
+            }
+        })
         viewModelProduct.counter.observe(viewLifecycleOwner, Observer {
             addProductToCart.isEnabled = it > 0
             counterView.text = it.toString()
@@ -82,7 +102,7 @@ class ProductFragment(product: Product) : Fragment() {
 
     private fun redirectToHome(){
         getActivity()?.supportFragmentManager?.beginTransaction()?.apply {
-            replace(R.id.fragmentContainerView2,HomeFragment())
+            replace(R.id.fragmentContainerView2,from)
             commit()
         }
     }
