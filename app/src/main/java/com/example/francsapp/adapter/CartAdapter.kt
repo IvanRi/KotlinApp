@@ -3,18 +3,17 @@ package com.example.francsapp.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.francsapp.R
 import com.example.francsapp.models.OrderItem
-import android.os.Build
-import androidx.fragment.app.FragmentTransaction
 
 
 class CartAdapter(
-    var itemList: MutableList<OrderItem>,
+    var itemList: MutableList<OrderItem>?,
+    var hasTrashItem: Boolean,
     var onClick: (OrderItem) -> Unit
 ): RecyclerView.Adapter<CartAdapter.CartHolder>() {
 
@@ -49,16 +48,20 @@ class CartAdapter(
     }
 
     override fun onBindViewHolder(holder: CartHolder, position: Int) {
-        var item: OrderItem = itemList[position]
+        var item: OrderItem = itemList!![position]
         holder.setName(item.name)
         holder.setUnits(item.units)
         holder.setPrice(item.price)
         holder.getDeleteButton().setOnClickListener{
             onClick(item)
         }
+        if(!hasTrashItem){
+            var button = holder.getDeleteButton()
+            button.isVisible = false
+        }
     }
 
     override fun getItemCount(): Int {
-        return itemList.size
+        return itemList!!.size
     }
 }

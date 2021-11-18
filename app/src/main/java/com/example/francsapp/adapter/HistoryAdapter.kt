@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.francsapp.R
 import com.example.francsapp.models.OrderState
@@ -37,6 +38,10 @@ class HistoryAdapter(
             var codeStr = code.toString()
             codeText.text = codeStr.slice(3..(codeStr.length-1))
         }
+
+        fun getCard (): CardView{
+            return view.findViewById(R.id.historyItem)
+        }
     }
 
     override fun onCreateViewHolder(
@@ -53,6 +58,9 @@ class HistoryAdapter(
         holder.setDate(item.date)
         holder.setState(item.orderState!!)
         holder.setTotal(item.total)
+        holder.getCard().setOnClickListener(){
+            onClick(item)
+        }
     }
 
     override fun getItemCount(): Int {

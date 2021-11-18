@@ -15,7 +15,7 @@ class HistoryViewModel: ViewModel() {
     val orderList = MutableLiveData<MutableList<SavedOrder>>()
 
     fun getAllOrders(){
-        val docRef = firebaseDB.collection("orders").orderBy("date", Query.Direction.DESCENDING)
+        val docRef = firebaseDB.collection("orders").orderBy("orderCode", Query.Direction.DESCENDING)
         docRef.get()
             .addOnSuccessListener { documents ->
                 var orders = mutableListOf<SavedOrder>()

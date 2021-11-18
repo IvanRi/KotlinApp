@@ -52,7 +52,7 @@ class CartFragment : Fragment() {
 
         viewModelCart.itemOrderList.observe(viewLifecycleOwner, Observer {
             payButton.isEnabled = it.size > 0
-            recCart.adapter = CartAdapter(it){
+            recCart.adapter = CartAdapter(it, true){
                     item: OrderItem ->
                 run {
                     viewModelCart.deleteItem(item)
